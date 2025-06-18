@@ -10,11 +10,11 @@ const HomeSection = () => {
     <>
     
     {/* versi 1 pake base layout */}
-    {/* <BaseLayout> */}
+    <BaseLayout>
       <div className="w-full h-screen bg-cover bg-center relative" style={{ backgroundImage : `url(${backgroundKolam})` }}>
         <div className="w-full h-screen bg-[rgba(0,0,0,.5)] absolute top-0 left-0 inset-0 z-0"></div>
         <Container>
-          <div className="relative z-10 flex flex-col items-center text-white h-screen text-center pt-26">
+          <div className="relative z-10 flex flex-col items-center text-white h-screen text-center pt-40">
             {/* versi 2 pake logo */}
             <img src={logo} alt="lestari aquatic logo" width={200} />
             <h1 className="text-4xl md:text-6xl font-bold w-full md:w-2/3">
@@ -35,7 +35,7 @@ const HomeSection = () => {
         </Container>
       </div>
 
-    {/* </BaseLayout> */}
+    </BaseLayout>
 
     <Price/>
 
