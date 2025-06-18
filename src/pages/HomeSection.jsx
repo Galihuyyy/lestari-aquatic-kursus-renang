@@ -10,7 +10,7 @@ const HomeSection = () => {
     <>
     
     {/* versi 1 pake base layout */}
-    {/* <BaseLayout> */}
+    <BaseLayout>
       <div className="w-full h-screen bg-cover bg-center relative" style={{ backgroundImage : `url(${backgroundKolam})` }}>
         <div className="w-full h-screen bg-[rgba(0,0,0,.5)] absolute top-0 left-0 inset-0 z-0"></div>
         <Container>
@@ -35,7 +35,7 @@ const HomeSection = () => {
         </Container>
       </div>
 
-    {/* </BaseLayout> */}
+    </BaseLayout>
 
     <Price/>
 
