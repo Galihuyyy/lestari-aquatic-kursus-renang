@@ -135,21 +135,22 @@ const Produk = () => {
     <BaseLayout>
         <main className="w-full pt-20 font-[montserrat] text-gray-800 bg-gray-100">
             <div className="flex h-70 flex-col bg-gray-400 md:flex-row items-center justify-center text-center md:text-start gap-6 md:gap-0">
-                <div className="md:border-e-4 border-gray-600 md:pe-6 md:me-6">
+                <div className="md:border-e-4 border-gray-600 md:pe-6 md:me-6" data-aos="fade-in"  data-aos-delay="600">
                     <h1 className="font-bold text-4xl">Product by</h1>
                     <h1 className="font-bold text-2xl">Our <span className="text-orange-600">Partner</span> </h1>
                 </div>
-                <img src={omahSepatuV2} alt="logo" width={100} />
+                <img src={omahSepatuV2} alt="logo" width={100} data-aos="fade-in"  data-aos-delay="600" />
             </div>
 
             <div className="produk grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-20 px-4 md:px-12 lg:px-22 gap-3">
             {produk.map((p, i) => (
                 <Fragment key={i}>
-                <h1 className="col-span-2 md:col-span-3 lg:col-span-4 font-semibold text-gray-400 text-center text-xl my-12">
+                <h1 className="col-span-2 md:col-span-3 lg:col-span-4 font-semibold text-gray-400 text-center text-xl my-12" data-aos="fade-right"  data-aos-delay="600">
                     — {p.kategori} —
                 </h1>
                 {p.produk.map((pr, index) => (
                     <div
+                    data-aos="fade-in" data-aos-delay={index * 200}
                     key={index}
                     className="card rounded-md p-4 w-full border-[1px] bg-white border-gray-200 shadow"
                     >
@@ -167,7 +168,7 @@ const Produk = () => {
                             }
                         </span>
                         </h1>
-                        <button onClick={() => {window.location.href = "https://api.whatsapp.com/send?phone=6281944984611&text=Hi%20kak!%20saya%20ingin%20membeli%20produk%20produk.%20Bagaimana%20ya%20prosedur%20pembayaran%20dan%20pengambilan%20barangnya%3F"}} className="cursor-pointer w-full text-sm mt-5 py-2 bg-indigo-600 hover:bg-indigo-800 duration-200 text-white font-semibold rounded-md">
+                        <button onClick={() => {window.location.href = `https://api.whatsapp.com/send?phone=6281944984611&text=Hi%20kak!%20saya%20ingin%20membeli%20produk%20${pr.name}.%20Bagaimana%20ya%20prosedur%20pembayaran%20dan%20pengambilan%20barangnya%3F`}} className="cursor-pointer w-full text-sm mt-5 py-2 bg-indigo-600 hover:bg-indigo-800 duration-200 text-white font-semibold rounded-md">
                             Beli
                         </button>
                     </div>

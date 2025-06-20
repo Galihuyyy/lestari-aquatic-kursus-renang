@@ -3,7 +3,7 @@ import logo from "../assets/images/logo_krl.png"
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 py-10 font-[montserrat]">
+    <footer className="bg-gray-100 py-10 font-[montserrat]" data-aos="fade-up">
         <div className="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             
             {/* Logo */}

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import Navlink from "./Navlink"
 import { useState, useRef, useEffect } from "react"
 import logo from "../assets/images/logo_krl.png"
+import ScrollLink from "./ScrollLink"
 
 const Navbar = () => {
   const [active, setActive] = useState(false)
@@ -33,9 +34,9 @@ const Navbar = () => {
   }, [active])
 
   return (
-    <div className="w-full py-4 flex items-center justify-between px-12 bg-gray-100 fixed top-0 left-0 z-50 font-[poppins]"  data-aos="fade-down">
+    <div className="w-full py-4 flex items-center justify-between px-12 bg-gray-100 fixed top-0 left-0 z-50 font-[poppins]"  data-aos="fade-down" data-aos-duration="600">
       <div className="logo">
-        <img src={logo} alt="logo" width={40} />
+        <img src={logo} alt="logo" width={40} className="cursor-pointer" onClick={() => {window.location.href = "/"}} />
       </div>
 
       <div
@@ -46,6 +47,8 @@ const Navbar = () => {
         ${active ? "max-lg:right-4" : "max-lg:-right-full"}`}
       >
         <Navlink to="/">Home</Navlink>
+        <ScrollLink to="dokumentasi">Dokumentasi</ScrollLink>
+        <ScrollLink to="pricing">Pricing</ScrollLink>
         <Navlink to="/produk">Produk</Navlink>
         <Link
           to={"https://wa.me/6283171294737"}
@@ -60,7 +63,7 @@ const Navbar = () => {
       <Link
         to={"https://wa.me/6283171294737"}
         target="_blank"
-        className="flex items-center max-lg:hidden text-gray-50 bg-green-500 px-3 rounded-full gap-2 py-1"
+        className="flex items-center max-lg:hidden text-gray-50 bg-green-500 px-3 rounded-full gap-2 py-1 hover:bg-green-700 duration-200"
       >
         <i className="fa-solid fa-comment"></i>
         <h1 className="font-semibold text-sm">Hubungi Kami</h1>

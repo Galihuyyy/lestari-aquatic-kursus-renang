@@ -65,13 +65,14 @@ const Price = () => {
     // <BaseLayout>
         <div className="w-full py-20 bg-gray-200 min-h-screen" id="pricing">
             <div className="py-30 text-center font-[montserrat] text-gray-800">
-                <h1 className="text-4xl max-md:px-5 font-bold mb-2">Solusi Lengkap dan Terjangkau</h1>
-                <p>Rabu dan Jumat — <b>13.00 - 14.00</b> | Minggu — <b>07.30 - 08.30</b></p>
-                <p className="mt-3 font-semibold">📍Kolam Renang WBLL (Wisata Blayu Lesti Lestari)</p>
+                <h1 className="text-4xl max-md:px-5 font-bold mb-2"  data-aos="fade-down">Solusi Lengkap dan Terjangkau</h1>
+                <p  data-aos="fade-in"  data-aos-delay="300" >Rabu dan Jumat — <b>13.00 - 14.00</b> | Minggu — <b>07.30 - 08.30</b></p>
+                <p data-aos="fade-in"  data-aos-delay="500" className="mt-3 font-semibold">📍Kolam Renang WBLL (Wisata Blayu Lesti Lestari)</p>
             </div>
             <Container className="flex justify-center gap-6 flex-wrap">
             {layanan.map((paket, idx) => (
                 <div
+                data-aos="fade-in"  data-aos-delay={idx * 400}
                 key={idx}
                 className="card py-12 px-6 text-gray-800 w-72 h-fit border-[1px] border-gray-400 rounded-xl bg-white"
                 >

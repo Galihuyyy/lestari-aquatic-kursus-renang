@@ -50,10 +50,13 @@ const Dokumentasi = () => {
 
     
   return (
-    <div className="w-full py-12">
+    <div className="w-full py-12" id="dokumentasi">
+            <h1 className="text-2xl font-semibold font-[montserrat] text-center mb-12">Kegiatan Kita</h1>
         <Container className="flex justify-center flex-wrap gap-3">
             {dokumentasi.map((d,i) => (
-                <div key={i} className="card w-76 rounded-xl shadow-lg overflow-hidden border-2 border-gray-300 bg-white">
+                <div key={i} className="card w-76 rounded-xl shadow-lg overflow-hidden border-2 border-gray-300 bg-white"
+                    data-aos="fade-in" data-aos-delay={i * 200}
+                >
                 <div className="w-full aspect-[16/9]">
                     <img 
                     src={d.foto}
