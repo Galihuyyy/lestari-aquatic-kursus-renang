@@ -44,8 +44,16 @@ const Price = () => {
             nama: "Paket 12x Pertemuan",
             deskripsi: "Akses penuh ke semua fasilitas dan pelatih.",
             hargaAsli: 900000,
-            diskon: 375/525,
+            diskon: 375/900,
             hargaTotal: 525000,
+            benefit: [0, 1, 2, 3, 4, 5, 6, 7] // full access
+        },
+        {
+            nama: "Paket Grup 4x Pertemuan",
+            deskripsi: "Akses penuh ke semua fasilitas dan pelatih. *Maximal 5 Orang",
+            hargaAsli: 1000000,
+            diskon: 50/1000,
+            hargaTotal: 950000,
             benefit: [0, 1, 2, 3, 4, 5, 6, 7] // full access
         }
     ]
@@ -58,7 +66,8 @@ const Price = () => {
         <div className="w-full pt-20 bg-gray-200 min-h-screen" id="pricing">
             <div className="py-30 text-center font-[montserrat] text-gray-800">
                 <h1 className="text-4xl max-md:px-5 font-bold mb-2">Solusi Lengkap dan Terjangkau</h1>
-                <p>Jumat dan Sabtu — <b>13.00 - 14.00</b> | Minggu — <b>07.30 - 08.30</b></p>
+                <p>Rabu dan Jumat — <b>13.00 - 14.00</b> | Minggu — <b>07.30 - 08.30</b></p>
+                <p className="mt-3 font-semibold">📍Kolam Renang WBLL (Wisata Blayu Lesti Lestari)</p>
             </div>
             <Container className="flex justify-center gap-6 flex-wrap">
             {layanan.map((paket, idx) => (
@@ -87,6 +96,7 @@ const Price = () => {
                         {paket.nama === "Harian" && " /pertemuan"}
 
                         </h1>
+                        <p className="text-red-600 mt-2 text-[10px] font-semibold">* :  Tidak Termasuk Tiket Masuk (Rp 10.000).</p>
                     </div>
 
                     <Link to={`https://api.whatsapp.com/send?phone=6283171294737&text=Hi%20Kak!%20Saya%20tertarik%20kursus%20renang%20dengan%20layanan%20${paket.nama}%20nih%2C%20bagaimana%20ya%20prosedurnya%3F`} target="_blank">

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import Navlink from "./Navlink"
 import { useState, useRef, useEffect } from "react"
-import logo from "../assets/images/logo_lestari_aquatic_V1.2.png"
+import logo from "../assets/images/logo_krl.png"
 
 const Navbar = () => {
   const [active, setActive] = useState(false)
@@ -35,9 +35,9 @@ const Navbar = () => {
   }, [active])
 
   return (
-    <div className="w-full py-4 flex items-center justify-between px-6 bg-gray-100 fixed top-0 left-0 z-50 font-[poppins]">
+    <div className="w-full py-4 flex items-center justify-between px-12 bg-gray-100 fixed top-0 left-0 z-50 font-[poppins]">
       <div className="logo">
-        <img src={logo} alt="logo" width={100} />
+        <img src={logo} alt="logo" width={40} />
       </div>
 
       <div
