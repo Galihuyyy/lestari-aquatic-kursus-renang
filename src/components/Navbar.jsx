@@ -6,22 +6,27 @@ import logo from "../assets/images/logo_lestari_aquatic_V1.2.png"
 const Navbar = () => {
   const [active, setActive] = useState(false)
   const menuRef = useRef(null)
+  const toggleRef = useRef(null)
 
   const toggleMenu = () => {
-    setActive(!active)
+    setActive(prev => !prev)
   }
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setActive(false)
-      }
+  
+  const handleClickOutside = (event) => {
+    if (
+      menuRef.current &&
+      !menuRef.current.contains(event.target) &&
+      toggleRef.current &&
+      !toggleRef.current.contains(event.target)
+    ) {
+      setActive(false)
     }
+  }
+  useEffect(() => {
+    console.log(active);
 
     if (active) {
       document.addEventListener("mousedown", handleClickOutside)
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside)
     }
 
     return () => {
@@ -63,7 +68,7 @@ const Navbar = () => {
         <h1 className="font-semibold text-sm">Hubungi Kami</h1>
       </Link>
 
-      <div className="lg:hidden" onClick={toggleMenu}>
+      <div className="lg:hidden" onClick={toggleMenu} ref={toggleRef}>
         <i className="fa-solid fa-bars text-xl"></i>
       </div>
     </div>
