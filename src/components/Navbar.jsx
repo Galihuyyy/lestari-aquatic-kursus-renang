@@ -1,27 +1,35 @@
 import { Link } from "react-router-dom"
 import Navlink from "./Navlink"
 import { useState, useRef, useEffect } from "react"
+<<<<<<< HEAD
 import logo from "../assets/images/logo_lestari_aquatic_v1.2.png"
+=======
+import logo from "../assets/images/logo_krl.png"
+import ScrollLink from "./ScrollLink"
+>>>>>>> kerjaan-aman
 
 const Navbar = () => {
   const [active, setActive] = useState(false)
   const menuRef = useRef(null)
+  const toggleRef = useRef(null)
 
   const toggleMenu = () => {
-    setActive(!active)
+    setActive(prev => !prev)
   }
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setActive(false)
-      }
+  
+  const handleClickOutside = (event) => {
+    if (
+      menuRef.current &&
+      !menuRef.current.contains(event.target) &&
+      toggleRef.current &&
+      !toggleRef.current.contains(event.target)
+    ) {
+      setActive(false)
     }
-
+  }
+  useEffect(() => {
     if (active) {
       document.addEventListener("mousedown", handleClickOutside)
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside)
     }
 
     return () => {
@@ -30,9 +38,13 @@ const Navbar = () => {
   }, [active])
 
   return (
-    <div className="w-full py-4 flex items-center justify-between px-6 bg-gray-100 fixed top-0 left-0 z-50 font-[poppins]">
+    <div className="w-full py-4 flex items-center justify-between px-12 bg-gray-100 fixed top-0 left-0 z-50 font-[poppins]"  data-aos="fade-down" data-aos-duration="600">
       <div className="logo">
+<<<<<<< HEAD
         <img src={logo} alt="logo" width={100} />
+=======
+        <img src={logo} alt="logo" width={40} className="cursor-pointer" onClick={() => {window.location.href = "/"}} />
+>>>>>>> kerjaan-aman
       </div>
 
       <div
@@ -43,7 +55,12 @@ const Navbar = () => {
         ${active ? "max-lg:right-4" : "max-lg:-right-full"}`}
       >
         <Navlink to="/">Home</Navlink>
+<<<<<<< HEAD
         <a href="#pricing">Pricing</a>
+=======
+        <ScrollLink to="dokumentasi">Dokumentasi</ScrollLink>
+        <ScrollLink to="pricing">Pricing</ScrollLink>
+>>>>>>> kerjaan-aman
         <Navlink to="/produk">Produk</Navlink>
         <Link
           to={"https://wa.me/6283171294737"}
@@ -58,13 +75,13 @@ const Navbar = () => {
       <Link
         to={"https://wa.me/6283171294737"}
         target="_blank"
-        className="flex items-center max-lg:hidden text-gray-50 bg-green-500 px-3 rounded-full gap-2 py-1"
+        className="flex items-center max-lg:hidden text-gray-50 bg-green-500 px-3 rounded-full gap-2 py-1 hover:bg-green-700 duration-200"
       >
         <i className="fa-solid fa-comment"></i>
         <h1 className="font-semibold text-sm">Hubungi Kami</h1>
       </Link>
 
-      <div className="lg:hidden" onClick={toggleMenu}>
+      <div className="lg:hidden" onClick={toggleMenu} ref={toggleRef}>
         <i className="fa-solid fa-bars text-xl"></i>
       </div>
     </div>
