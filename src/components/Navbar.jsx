@@ -23,8 +23,6 @@ const Navbar = () => {
     }
   }
   useEffect(() => {
-    console.log(active);
-
     if (active) {
       document.addEventListener("mousedown", handleClickOutside)
     }
@@ -35,7 +33,7 @@ const Navbar = () => {
   }, [active])
 
   return (
-    <div className="w-full py-4 flex items-center justify-between px-12 bg-gray-100 fixed top-0 left-0 z-50 font-[poppins]">
+    <div className="w-full py-4 flex items-center justify-between px-12 bg-gray-100 fixed top-0 left-0 z-50 font-[poppins]"  data-aos="fade-down">
       <div className="logo">
         <img src={logo} alt="logo" width={40} />
       </div>

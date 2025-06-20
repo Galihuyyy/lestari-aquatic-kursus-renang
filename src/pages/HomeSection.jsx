@@ -4,6 +4,9 @@ import { Link } from "react-router-dom"
 import BaseLayout from "../components/BaseLayout"
 import Price from "./Price"
 import logo from "../assets/images/logo_krl.png"
+import Dokumentasi from "./Dokumentasi"
+import Slogan from "./Slogan"
+import Footer from "../components/Footer"
 
 const HomeSection = () => {
   return (
@@ -14,9 +17,9 @@ const HomeSection = () => {
       <div className="w-full h-screen bg-cover bg-center relative" style={{ backgroundImage : `url(${backgroundKolam})` }}>
         <div className="w-full h-screen bg-[rgba(0,0,0,.5)] absolute top-0 left-0 inset-0 z-0"></div>
         <Container>
-          <div className="relative z-10 flex flex-col items-center justify-center text-white h-screen text-center">
+          <div className="relative z-10 flex flex-col items-center justify-center text-white h-screen text-center max-lg:pt-26">
             {/* versi 2 pake logo */}
-            <img src={logo} alt="lestari aquatic logo" width={144} />
+            <img src={logo} alt="lestari aquatic logo" width={124} data-aos="fade-in" />
             <h1 className="text-4xl md:text-6xl font-bold w-full md:w-2/3">
               Udah Siap Jadi <span className="text-blue-500">Jagoan</span> Air?
             </h1>
@@ -36,7 +39,10 @@ const HomeSection = () => {
       </div>
 
     </BaseLayout>
+    <Dokumentasi/>
+    <Slogan/>
     <Price/>
+    <Footer/>
 
     </>
   )

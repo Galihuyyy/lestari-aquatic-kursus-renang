@@ -63,7 +63,7 @@ const Price = () => {
   return (
     // versi 1 pake base layout
     // <BaseLayout>
-        <div className="w-full pt-20 bg-gray-200 min-h-screen" id="pricing">
+        <div className="w-full py-20 bg-gray-200 min-h-screen" id="pricing">
             <div className="py-30 text-center font-[montserrat] text-gray-800">
                 <h1 className="text-4xl max-md:px-5 font-bold mb-2">Solusi Lengkap dan Terjangkau</h1>
                 <p>Rabu dan Jumat — <b>13.00 - 14.00</b> | Minggu — <b>07.30 - 08.30</b></p>
