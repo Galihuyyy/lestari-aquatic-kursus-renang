@@ -37,16 +37,16 @@ const Price = () => {
             nama: "Paket 8x Pertemuan",
             deskripsi: "Teknik lanjutan dan jadwal fleksibel.",
             hargaAsli: 600000,
-            diskon: 250/600,
-            hargaTotal: 350000,
+            diskon: 200/600,
+            hargaTotal: 400000,
             benefit: [0, 1, 2, 3, 4, 5, 6] // unlock sampai request pelatih
         },
         {
             nama: "Paket 12x Pertemuan",
             deskripsi: "Akses penuh ke semua fasilitas dan pelatih.",
             hargaAsli: 900000,
-            diskon: 375/900,
-            hargaTotal: 525000,
+            diskon: 300/900,
+            hargaTotal: 600000,
             benefit: [0, 1, 2, 3, 4, 5, 6, 7] // full access
         },
         {
