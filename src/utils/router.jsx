@@ -6,7 +6,7 @@ import Produk from "../pages/Produk";
 
 const router = createBrowserRouter([
     {
-        path : '//',
+        path : '/',
         element : <HomeSection />
     },
     {

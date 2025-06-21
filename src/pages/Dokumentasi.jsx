@@ -7,6 +7,7 @@ import dokumentasi_4 from "../assets/images/dokumentasi/dokumentasi_4.jpg"
 import dokumentasi_5 from "../assets/images/dokumentasi/dokumentasi_5.jpg"
 import dokumentasi_6 from "../assets/images/dokumentasi/dokumentasi_6.jpg"
 import dokumentasi_7 from "../assets/images/dokumentasi/dokumentasi_7.jpg"
+import CardDokumentasi from "../components/CardDokumentasi"
 
 const Dokumentasi = () => {
 
@@ -54,21 +55,10 @@ const Dokumentasi = () => {
             <h1 className="text-2xl font-semibold font-[montserrat] text-center mb-12">Kegiatan Kita</h1>
         <Container className="flex justify-center flex-wrap gap-3">
             {dokumentasi.map((d,i) => (
-                <div key={i} className="card w-76 rounded-xl shadow-lg overflow-hidden border-2 border-gray-300 bg-white"
-                    data-aos="fade-in" data-aos-delay={i * 200}
-                >
-                <div className="w-full aspect-[16/9]">
-                    <img 
-                    src={d.foto}
-                    alt="Header Image" 
-                    className="w-full h-full object-cover"
-                    />
-                </div>
-                <div className="body p-4">
-                    <h1 className="text-xl font-semibold mb-2">{d.judul}</h1>
-                    <p className="text-sm text-gray-600">{d.deskripsi}</p>
-                </div>
-                </div>
+                <CardDokumentasi
+                    key={i}
+                    d={d}
+                    i={i}/>
 
             ))}
 

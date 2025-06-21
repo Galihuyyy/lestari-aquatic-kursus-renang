@@ -14,17 +14,10 @@ const HomeSection = () => {
     
     {/* versi 1 pake base layout */}
     <BaseLayout>
-<<<<<<< HEAD
-      <div className="w-full h-screen bg-cover bg-center relative" style={{ backgroundImage : `url(${backgroundKolam})` }}>
-        <div className="w-full h-screen bg-[rgba(0,0,0,.5)] absolute top-0 left-0 inset-0 z-0"></div>
-        <Container>
-          <div className="relative z-10 flex flex-col items-center text-white h-screen text-center pt-40">
-=======
       <div className="w-full h-screen bg-cover bg-center relative" style={{ backgroundImage : `url(${backgroundKolam})` }} id="home">
         <div className="w-full h-screen bg-[rgba(0,0,0,.5)] absolute top-0 left-0 inset-0 z-0"></div>
         <Container>
           <div className="relative z-10 flex flex-col items-center justify-center text-white h-screen text-center max-lg:pt-26">
->>>>>>> kerjaan-aman
             {/* versi 2 pake logo */}
             <img src={logo} alt="lestari aquatic logo" width={124} data-aos="fade-in" data-aos-delay="600" />
             <h1 className="text-4xl md:text-6xl font-bold w-full md:w-2/3" data-aos="fade-in" data-aos-delay="800">
@@ -47,12 +40,8 @@ const HomeSection = () => {
       </div>
 
     </BaseLayout>
-<<<<<<< HEAD
-
-=======
     <Dokumentasi/>
     <Slogan/>
->>>>>>> kerjaan-aman
     <Price/>
     <Footer/>
     </>
