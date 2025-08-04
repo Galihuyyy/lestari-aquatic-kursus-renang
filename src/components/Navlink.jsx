@@ -5,7 +5,7 @@ const Navlink = (props) => {
     <NavLink
         to={props.to}
         className={({ isActive }) =>
-            isActive ? "bg-blue-700 text-white px-3 rounded-full" : "text-gray-500"
+            isActive ? "bg-blue-700 text-white px-3 rounded-full" : ""
         }
         >
         {props.children}

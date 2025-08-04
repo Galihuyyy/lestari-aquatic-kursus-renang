@@ -8,6 +8,7 @@ const Navbar = () => {
   const [active, setActive] = useState(false)
   const menuRef = useRef(null)
   const toggleRef = useRef(null)
+  const [tag, setTag] = useState("home")
 
   const toggleMenu = () => {
     setActive(prev => !prev)
@@ -23,6 +24,68 @@ const Navbar = () => {
       setActive(false)
     }
   }
+
+  window.addEventListener("scroll", () => {
+    const widthScreen = window.innerWidth
+    const scrollY = window.scrollY
+
+    // col 1
+    if (widthScreen >= 0 && widthScreen <= 676) {
+      if (scrollY >= 0 && scrollY <540) {
+        setTag("home")
+      }
+      if (scrollY >= 540 && scrollY < 3240) {
+        setTag("dokumentasi")
+      }
+      if (scrollY >= 3240) {
+        console.log("price");
+        setTag("pricing")
+      }
+    }
+
+    // col 2
+    if (widthScreen > 676 && widthScreen <= 1122) {
+      if (scrollY >= 0 && scrollY <540) {
+        setTag("home")
+      }
+      if (scrollY >= 540 && scrollY < 3420) {
+        setTag("dokumentasi")
+      }
+      if (scrollY >= 2240) {
+        setTag("pricing")
+      }
+    }
+
+    // col 3
+    if (widthScreen > 1122 && widthScreen <= 1501) {
+      if (scrollY >= 0 && scrollY <540) {
+        setTag("home")
+      }
+      if (scrollY >= 540 && scrollY < 3420) {
+        setTag("dokumentasi")
+      }
+      if (scrollY >= 1940) {
+        setTag("pricing")
+      }
+    }
+
+    // col 4
+    if (widthScreen > 1501) {
+      if (scrollY >= 0 && scrollY <540) {
+        setTag("home")
+      }
+      if (scrollY >= 540 && scrollY < 1750) {
+        setTag("dokumentasi")
+      }
+      if (scrollY >= 1750) {
+        setTag("pricing")
+        console.log("on");
+      }
+    }
+
+
+  })
+  
   useEffect(() => {
     if (active) {
       document.addEventListener("mousedown", handleClickOutside)
@@ -35,7 +98,6 @@ const Navbar = () => {
 
   const location = useLocation()
   const currentPathName = location.pathname
-  console.log(currentPathName);
 
   return (
     <div className="w-full py-4 flex items-center justify-between px-12 bg-gray-100 fixed top-0 left-0 z-50 font-[poppins]"  data-aos="fade-down" data-aos-duration="600">
@@ -50,11 +112,11 @@ const Navbar = () => {
         max-lg:border-[1px] max-lg:border-neutral-400 max-lg:shadow-md 
         ${active ? "max-lg:right-4" : "max-lg:-right-full"}`}
       >
-        <Navlink to="/">Home</Navlink>
+        <ScrollLink to="home" tag={tag}>Home</ScrollLink>
         {currentPathName == "/" && (
           <>
-            <ScrollLink to="dokumentasi">Dokumentasi</ScrollLink>
-            <ScrollLink to="pricing">Pricing</ScrollLink>
+            <ScrollLink to="dokumentasi" tag={tag}>Dokumentasi</ScrollLink>
+            <ScrollLink to="pricing" tag={tag}>Pricing</ScrollLink>
           </>
         )}
         <Navlink to="/produk">Produk</Navlink>
